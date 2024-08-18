@@ -1,0 +1,600 @@
+$font-family-base: 'Outfit', sans-serif;
+
+@mixin font-outfit($weight: 600, $style: normal) {
+  font-family: $font-family-base;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin button ($background-color: #fff, $color: #336913){
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 20px;
+    border: 1px solid #E0E0E0;
+    cursor: pointer;
+    background-color: $background-color;
+    color: $color;
+    &:hover {
+        background-color: #E0E0E0;
+    }
+}
+
+@mixin sect($background-color: #FFFFFF){
+    background-color: $background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 50px 70px 50px 70px;
+}
+
+@mixin content ($color:000000, $width: 750px){
+    color: $color;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: $width;
+    line-height: 27px;
+}
+h1{
+    @include font-outfit(700, normal);
+    text-align:center;
+    font-size: 35px;
+    line-height: 50px;
+    letter-spacing: -0.5%;
+    margin: 0px;
+}
+h2{
+    @include font-outfit(700, normal);
+    letter-spacing: -0.5%;
+    text-align: left;
+}
+h3{
+    @include font-outfit(600, normal);
+    letter-spacing: -0.5%;
+    text-align: center;
+    margin-top: 10px; 
+}
+p {
+    @include font-outfit(300, normal);
+    font-size: 15px;
+    line-height: 1.5;
+    color:#000000;
+}
+
+.button1 {
+    @include button ();
+    font-weight: bold;
+}
+.button2 {
+    @include button (#FFFFFF, #000000);
+    font-weight: 300;
+}
+.button3 {
+    @include button (#336913, #FFFFFF);
+}
+.button4 {
+    @include button (#FFFFFF, #4CAF50);
+    font-size: 16px;
+    border: 1px solid #4CAF50;
+    margin-right: 10px;
+}
+.button5 {
+    @include button (#FFFFFF, #888888);
+    font-size: 16px;
+}
+.button6 {
+    @include button (#518BBB, #FFFFFF);
+    font-size: 16px;
+}
+.button7 {
+    @include button (#FFFFFF, #518BBB);
+    font-size: 16px;
+}
+.button8 {
+    @include button (#336913, #FFFFFF);
+    font-size: 16px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+header {
+    @include font-outfit();
+    background-color: #fff;
+    padding: 20px 70px 0px 70px;
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        img {
+            width: 150px;
+        }
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        li {
+            margin-right: 20px;
+            a {
+                text-decoration: none;
+                color: #333;
+                &.btn {
+                    background-color: #4CAF50;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    width: calc(50% - 5px);
+    float: left;
+    background-color: #FFFFFF;
+    border-right: 1px solid #ddd;
+    .content-hero {
+        width: Fixed (729px)px;
+        height: Hug (437px)px;
+        padding: 50px 70px 0px 70px;
+        gap: 40px;
+        opacity: 0px;
+    }
+    .progress-container {
+        padding: 29px 34px 31px 35px;
+        gap: 0px;
+        border-radius: 20px;
+        border: 1px 0px 0px 0px;
+        opacity: 0px;
+        background-color: #fff;
+        box-shadow: 0px 0px 20px 0px #0000000D;
+        margin-bottom: 30px;
+    }
+    .progress-content {
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+    }
+    .progress-bar {
+        height: 10px;
+        background-color: #ddd;
+        border-radius: 5px;
+        margin-top: 10px;
+        overflow: hidden;
+        .progress {
+            height: 100%;
+            background-color: #336913;
+            width: 45%;
+        }
+    }
+}
+
+.leaderboard-container {
+    background-color: #FFFFFF;
+    width: 50%;
+    float: right;
+    background-image: url('img/est.png');
+    background-size: cover;
+    .content2 {
+        width: Fixed (729px)px;
+        height: Hug (437px)px;
+        padding: 50px 40px 0px 40px;
+        gap: 40px;
+        opacity: 0px;
+    }
+    .leaderboard-tabs {
+        display: flex;
+        margin: 16px 0px 30px 0px;
+    }
+    .list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding:15px 0px 0px 0px;
+        .item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            .number {
+                @include font-outfit();
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                color: white;
+                font-size: 18px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 15px;
+            }
+            .images {
+                width: 45px;
+                height: 45px;
+                margin-right: 15px;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                align-items: flex-start;
+            }
+
+            .title {
+                @include font-outfit(300, normal);
+                font-size: 12px;
+            }
+
+            .name {
+                @include font-outfit(700, normal);
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .count {
+                display: flex;
+                align-items: center;
+                .plant-icon {
+                    width: 40px;
+                    height: 35px;
+                    margin-right: 8px;
+                }
+                .number {
+                    @include font-outfit(700, normal);
+                    font-size: 24px;
+                    color: #336913;
+                    margin-right: 5px;
+                }
+                .text {
+                    @include font-outfit(300, normal);
+                    font-size: 16px;
+                    color: #336913;
+                }
+            }            
+
+        }
+    }
+}
+
+.about {
+    @include sect ();
+    position: relative;
+
+    .content-about {
+        @include content();
+    }
+
+    .logo-about {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        height: 120px;
+    }
+
+    .columnimages {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .column {
+        flex: 1 1 45%;
+        padding: 20px 20px 0px 20px;
+        box-sizing: border-box;
+
+        .imgs {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+        }
+
+    }
+    .transformation {
+        width: 200px;
+        height: auto;
+        border-radius: 30px 30px 30px 30px;
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+}
+
+.event {
+    @include sect (#F5FAF8);
+
+    .content-event {
+        @include content (#336913, 560px);
+    }
+    .event-box {
+        width: Hug (561.06px)px;
+        height: Hug (254.43px)px;
+        top: 56.31px;
+        left: 50.27px;
+        gap: 10.05px;
+        opacity: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 30px 0px 40px 0px;
+    
+        .event-details {
+            flex: 1;
+            padding-right: 20px;
+            padding-left: 30px;
+            width: 400;
+    
+            .date {
+                @include font-outfit();
+                color: #336913;
+                text-align: left;
+                font-size: 28px;
+                margin-bottom: 0px;
+            }
+    
+            .time {
+                @include font-outfit();
+                margin-bottom: 20px;
+                margin-top: 0px;
+                color: #000000;
+                text-align: left;
+                font-size: 30px;
+            }
+            .box-description{
+                margin-bottom: 25px;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 25px;
+            }
+            .description {
+                font-size: 14;
+                line-height: 1.5;
+                color: #222222;
+                text-align: left;
+                width: 65%;
+                margin: 0px;
+            }
+        }
+    }
+    .event-image {
+        position: relative;
+        flex: 1;
+        border-radius: 20px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 32px;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+
+            button-panah {
+                width: 20px;
+                height: 40px;
+                background-color: #336913;
+                color: white;
+                font-size: 30px;
+                margin: 15px;
+                border-radius: 12px;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+            }
+        }
+    }
+    .steps {
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      .step {
+        width: 18%;
+      }
+      
+      .step-line {
+        height: 4px;
+        margin-bottom: 20px;
+      }
+      
+      .green {
+        background-color: #1E7745;
+      }
+      
+      .grey {
+        background-color: #e5e5e5;
+      }
+      
+      .step-description {
+        @include font-outfit(400, normal);
+        font-size: 15px;
+        line-height: 1.5;
+        font-size: 15px;
+        color: #000;
+        text-align: left;
+      }               
+}
+
+.sponsorship {
+    @include sect ();
+    .content-sponsorship {
+        @include content (#112D63, 560px);
+    }
+    .table-sponsorship{
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 40px;
+        width: 100%;
+        .membership-table {
+            color: #1A2232;
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            thead {
+                @include font-outfit(500, normal);
+                background-color: #E0F6FF;
+                th {
+                    padding: 15px;
+                    text-align: center;
+                }
+            }
+        
+            tbody {
+                tr {
+                    &:nth-child(odd) {
+                        background-color: #FFFFFF;
+                    }
+        
+                    &:nth-child(even) {
+                        background-color: #F8FDFF;
+                    }
+        
+                    td {
+                        @include font-outfit(400, normal);
+                        padding: 15px;
+                        text-align: center;
+                        vertical-align: middle;
+        
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            margin-right: 10px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+        .benefits-table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            thead {
+                @include font-outfit(500, normal);
+                background-color: #E0F6FF; 
+                color: #1A2232;
+                th {
+                    padding: 15px;
+                }
+            }
+            tbody {
+              tr {
+                &:nth-child(odd) {
+                  background-color: #ffffff;
+                }
+                &:nth-child(even) {
+                  background-color: #F8FDFF;
+                }
+                td {
+                    @include font-outfit(400, normal);
+                    padding: 15px;
+                    color: #1A2232;
+                    vertical-align: middle;
+                    .checkmark {
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        line-height: 24px;
+                        text-align: center;
+                        border: 1px solid #292D32;
+                        border-radius: 50%;
+                        color: #292D32;
+                        font-size: 16px;
+                    }
+                }
+              }
+          
+            }
+            tfoot{
+                .donation-row {
+                  td {
+                    @include font-outfit(400, normal);
+                    padding: 15px;
+                    text-align: center;
+                    background-color: #518BBB;
+                    color: #FFFFFF;
+                    vertical-align: middle;
+                  }
+                }
+            }
+          }
+      }
+
+.donation-section {
+    @include sect(#F5FAF8);
+    text-align: unset;
+    position: relative;
+    padding-bottom: 0px;
+    .content-donation {
+        @include content (#336913, 560px);
+    }
+    .donation-images {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        img {
+            object-fit:fill;
+        }
+        .img-small {
+            width: 180px;
+            height: auto;
+        }
+
+        .img-medium {
+            width: 240px;
+            height: auto;
+        }
+
+        .img-large {
+            width: 300px;
+            height: auto;
+        }
+    }
+}
+
+footer{
+        @include font-outfit();
+        background-color: #1D4009;
+        color: #FFFFFF;
+        padding: 10px;
+        text-align-last: center;
+}
